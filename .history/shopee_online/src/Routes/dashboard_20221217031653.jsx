@@ -2,7 +2,7 @@ import React from 'react';
 import ProductList from '../components/productList';
 import Carousel from '../components/Crouser';
 import { Container } from '@chakra-ui/react';
-let url = 'http://localhost:3019/api/electronics'
+let url = 'http://localhost:3018/api/electronics'
 const Dashboard = () => {
     const [data,setdata] =React.useState([])
     const getdata=()=>{

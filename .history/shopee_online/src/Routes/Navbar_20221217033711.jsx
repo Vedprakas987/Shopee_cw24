@@ -30,7 +30,7 @@ export default function Navbar() {
 
   return (
     <>
-      <Box bg={useColorModeValue('dodgerblue', 'dodgerblue')} px={3}  padding={3} paddingRight="2%">
+      <Box bg={useColorModeValue('paleturquoise	', 'paleturquoise	')} px={3}  padding={3} paddingRight="2%">
         <Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
           <IconButton
             size={'md'}
@@ -51,7 +51,7 @@ export default function Navbar() {
             <HStack
               as={'nav'}
               spacing={4}
-              color="white"
+              color="b"
               fontWeight="bold"
               
               display={{ base: 'none', md: 'flex' }}>
@@ -63,7 +63,7 @@ export default function Navbar() {
           </HStack>
           <Flex alignItems={'center'}>
             <Box  marginLeft={{base:"10%",md:"5%",sm:"4%"}} cursor="pointer" marginRight={10}>
-            <Text color="white" fontWeight="bold">Cart</Text>
+            <Text color="black" fontWeight="bold">Cart</Text>
             </Box>
 
             <Menu>
@@ -75,7 +75,7 @@ export default function Navbar() {
                 minW={0}
                 size={1}
                 >
-               <Avatar src="https://avatars.githubusercontent.com/u/108031543?v=4" size="sm"></Avatar>
+               <Avatar size="sm"></Avatar>
               </MenuButton>
               <MenuList>
                 <MenuItem>Register</MenuItem>

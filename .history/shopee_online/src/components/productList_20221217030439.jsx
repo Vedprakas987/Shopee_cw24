@@ -9,7 +9,7 @@ const ProductList = ({products}) => {
         products.map((el)=>
         (
         <Box>
-            <Productcard key={el.price*Math.random()} {...el}/>
+            <Productcard key={el.price*Math} {...el}/>
         </Box>
         )
         )

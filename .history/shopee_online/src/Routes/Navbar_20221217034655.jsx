@@ -75,7 +75,7 @@ export default function Navbar() {
                 minW={0}
                 size={1}
                 >
-               <Avatar src="https://avatars.githubusercontent.com/u/108031543?v=4" size="sm"></Avatar>
+               <Avatar src="https://wallpapers.com/images/hd/cool-neon-blue-profile-picture-u9y9ydo971k9mdcf.jpg" size="sm"></Avatar>
               </MenuButton>
               <MenuList>
                 <MenuItem>Register</MenuItem>

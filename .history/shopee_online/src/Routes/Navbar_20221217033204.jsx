@@ -30,7 +30,7 @@ export default function Navbar() {
 
   return (
     <>
-      <Box bg={useColorModeValue('dodgerblue', 'dodgerblue')} px={3}  padding={3} paddingRight="2%">
+      <Box bg={useColorModeValue('Aqua', 'LightGray')} px={3}  padding={3} paddingRight="2%">
         <Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
           <IconButton
             size={'md'}
@@ -75,7 +75,7 @@ export default function Navbar() {
                 minW={0}
                 size={1}
                 >
-               <Avatar src="https://avatars.githubusercontent.com/u/108031543?v=4" size="sm"></Avatar>
+               <Avatar size="sm"></Avatar>
               </MenuButton>
               <MenuList>
                 <MenuItem>Register</MenuItem>

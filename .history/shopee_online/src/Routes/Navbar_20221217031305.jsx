@@ -1,8 +1,9 @@
-import { ReactNode } from 'react';
+import { ReactNode,useState} from 'react';
 import { Input, VStack,Text } from '@chakra-ui/react';
 import {SearchIcon} from '@chakra-ui/icons'
 import { BsFillCartCheckFill } from "react-icons/bs";
 import {Link,NavLink} from "react-router-dom"
+import Dashboard from './dashboard';
 import {
   Box,
   Flex,
@@ -27,10 +28,17 @@ const Links = ['New','Bestselling','Brand','Clearance','Deal','Coupon','App only
 
 export default function Navbar() {
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const [query,setquery] = useState("")
+  const callapis=()=>{
+    let url = `http://localhost:3018/api/electronics?q=${query}`
+    console.log(url)
+
+  }
+ 
 
   return (
     <>
-      <Box bg={useColorModeValue('dodgerblue', 'dodgerblue')} px={3}  padding={3} paddingRight="2%">
+      <Box bg={useColorModeValue('green.700', 'blue.600')} px={3}  padding={3} paddingRight="2%">
         <Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
           <IconButton
             size={'md'}
@@ -41,12 +49,12 @@ export default function Navbar() {
           />
           <HStack spacing={2} alignItems={'center'}>
             <Box>
-              <img   style={{borderRadius:"60%",width:"40%",marginLeft:"10%"}} src="https://i.imgur.com/4H4HfdD.png"/>
+              <img   style={{borderRadius:"60%",width:"40%",marginLeft:"10%"}} src="https://i.imgur.com/Ea4kEa7.png"/>
             </Box>
             <VStack w={{base:"120%",md:"100%",sm:"100%"}}  padding="0p 2rem">
                 <HStack w="100%">
-                <Input  borderRadius="20px"  bg="white" color="black"/>
-                <SearchIcon color="white" cursor="pointer"/>
+                <Input onInput={(e)=>setquery(e.target.value)} borderRadius="20px"  bg="white" color="black"/>
+                <SearchIcon onClick={callapis}  color="white" cursor="pointer"/>
                 </HStack>
             <HStack
               as={'nav'}
@@ -75,7 +83,7 @@ export default function Navbar() {
                 minW={0}
                 size={1}
                 >
-               <Avatar src="https://avatars.githubusercontent.com/u/108031543?v=4" size="sm"></Avatar>
+               <Avatar size="sm"></Avatar>
               </MenuButton>
               <MenuList>
                 <MenuItem>Register</MenuItem>
@@ -97,7 +105,7 @@ export default function Navbar() {
           </Box>
         ) : null}
       </Box>
-
+<Dashboard />
     </>
   );
 }
