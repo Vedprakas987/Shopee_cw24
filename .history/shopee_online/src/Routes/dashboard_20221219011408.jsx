@@ -1,0 +1,32 @@
+import React from 'react';
+import ProductList from '../components/productList';
+import Carousel from '../components/Crouser';
+import Bestselling from '../components/Bestselling';
+import { Center, Heading } from '@chakra-ui/react';
+const Dashboard = () => {
+    let url = 'https://mock-server-38943.onrender.com/api/data'
+    const [data,setdata] =React.useState({})
+    const getdata=()=>{
+        fetch(url).then((res)=>(res.json())).then((res)=>setdata(res))
+    }
+    React.useEffect(()=>{
+     getdata()
+    },[])
+    console.log(data.electronics,data.New)
+    return (
+      
+        <div>
+            <br/>
+            <hr/>
+            <Carousel/>
+            <Center mb={"20px"} mt={"20px"}>
+                <Heading padding={"5px"} borderRadius={'10px'} color={'Black'}>Best Selling</Heading>
+                </Center>
+            <Bestselling products={data.electronics}/>
+           <ProductList products={data.Toys}/> 
+        
+        </div>
+    );
+}
+
+export default Dashboard;
